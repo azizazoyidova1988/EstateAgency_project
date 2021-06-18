@@ -41,7 +41,6 @@ class Product(models.Model):
     price = models.IntegerField(blank=False, null=False, default=1)
     description = models.CharField(max_length=450, blank=False, null=False)
     category = models.ForeignKey(Category, blank=False, null=True, on_delete=models.SET_NULL)
-    services = models.ForeignKey(Services, blank=False, null=True, on_delete=models.SET_NULL)
     country = models.ForeignKey(Country, blank=False, null=True, on_delete=models.SET_NULL)
     aria = models.CharField(max_length=50, blank=False, null=False)
     beds = models.IntegerField(blank=False, null=False, default=1)
@@ -134,6 +133,19 @@ class Commenter(models.Model):
 
     class Meta:
         db_table = "commenter"
+
+    def __str__(self):
+        return self.name
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=150, blank=True, null=True)
+    email = models.EmailField(blank=True, null=True)
+    message = models.CharField(max_length=250, blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = "contact"
 
     def __str__(self):
         return self.name

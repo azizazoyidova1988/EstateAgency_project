@@ -73,7 +73,7 @@
                 </p>
               </div>
               <div class="card-footer-c">
-                <a href="#" class="link-c link-icon">Read more
+                <a  class="link-c link-icon">Read more
                   <span class="bi bi-chevron-right"></span>
                 </a>
               </div>
@@ -116,15 +116,15 @@
                   <div class="card-overlay-a-content">
                     <div class="card-header-a">
                       <h2 class="card-title-a">
-                        <a href="property-single.html">{{lat.id}} Mount
+                        <a href="{% url 'property-single' product_id=lat.id %}">{{lat.id}} Mount
                           {{lat.name}}</a>
                       </h2>
                     </div>
                     <div class="card-body-a">
                       <div class="price-box d-flex">
-                        <span class="price-a">{{lat.ser_name}} | $ {{lat.price}}</span>
+                        <span class="price-a">{{lat.status}} | $ {{lat.price}}</span>
                       </div>
-                      <a href="#" class="link-a">Click here to view
+                      <a href="{% url 'property-single' product_id=lat.id %}" class="link-a">Click here to view
                         <span class="bi bi-chevron-right"></span>
                       </a>
                     </div>
@@ -191,7 +191,7 @@
                 <div class="card-header-d">
                   <div class="card-title-d align-self-center">
                     <h3 class="title-d">
-                      <a href="agent-single.html" class="link-two">{{ag.name}}
+                      <a href="{% url 'agent-single' agent_id=ag.id %}" class="link-two">{{ag.name}}
                         </a>
                     </h3>
                   </div>
@@ -273,11 +273,11 @@
                 <div class="card-overlay">
                   <div class="card-header-b">
                     <div class="card-category-b">
-                      <a href="#" class="category-b">{{new.c_name}}</a>
+                      <a href="{% url 'blog-single' news_id=new.id %}" class="category-b">{{new.c_name}}</a>
                     </div>
                     <div class="card-title-b">
                       <h2 class="title-2">
-                        <a href="blog-single.html">{{new.name}}</a>
+                        <a href="{% url 'blog-single' news_id=new.id %}">{{new.name}}</a>
                       </h2>
                     </div>
                     <div class="card-date">
